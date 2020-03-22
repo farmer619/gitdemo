@@ -19,3 +19,16 @@ text0=text.lower()
 text1=text0.split()
 word=[]
 word1=[]
+
+def wenben():
+    global word
+    for i in text1:
+        i=i.replace(',','')
+        i=i.replace('.','')
+        i=i.replace('!','')
+        i=i.strip()
+        x=i.split(' ')
+        word.extend(x)
+    return word
+
+t=len(wenben())
