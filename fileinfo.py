@@ -97,3 +97,6 @@ tk.Button(tk1,text='词频统计表',command=e).pack()
 
 
 tk1.mainloop()
+
+#其实已经做完啦
+#直接运行就可以哦
