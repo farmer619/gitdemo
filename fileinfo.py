@@ -43,3 +43,22 @@ s=[]#去掉停用词后的词，用于词频统计
 for i in word:
     if i not in tc:
         s.append(i)
+
+def b(x):
+	key0={}
+	key0=key0.fromkeys(x)
+	word1=list(key0.keys())
+	for i in word1:
+		key0[i]=x.count(i)
+	return key0
+
+def c():
+    global s
+    C=b(s)
+    tkinter.messagebox.showinfo(title='词频统计',message=C)
+    
+def d(x):
+	key1={}
+	key1=sorted(x.items(),key=lambda d:d[1],reverse=True)
+	key1=dict(key1)
+	return key1
