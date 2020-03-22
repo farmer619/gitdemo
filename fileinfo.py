@@ -62,3 +62,38 @@ def d(x):
 	key1=sorted(x.items(),key=lambda d:d[1],reverse=True)
 	key1=dict(key1)
 	return key1
+l1=[]
+l2=[]
+def m(x):
+    i=0
+    for x,y in x.items():
+        if i<6:
+            l1.append('{}'.format(x))
+            l2.append('{}'.format(y))
+            i+=1
+m(d(b(s)))
+
+l3=[]
+for i in range(len(l2)):
+    l3.append(int(l2[i]))  
+
+
+mpl.rcParams['font.sans-serif'] = ['SimHei']
+def e():
+    global l1
+    global l2
+    f = Figure(figsize = (5,4), dpi=100)
+    m = f.add_subplot(111)
+    m.bar(l1,l3,width=1,facecolor='black',edgecolor='white',label='词频最高')
+    canvas=FigureCanvasTkAgg(f,master=tk1)
+    canvas.draw()
+    canvas.get_tk_widget().pack(side=tkinter.TOP,fill=tkinter.BOTH,expand=tkinter.YES)
+
+
+tk.Button(tk1,text='字数统计',command=f).pack()
+tk.Button(tk1,text='查看词频',command=c).pack()
+tk.Button(tk1,text='查看原文',command=a).pack()
+tk.Button(tk1,text='词频统计表',command=e).pack()
+
+
+tk1.mainloop()
