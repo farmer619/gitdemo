@@ -32,3 +32,14 @@ def wenben():
     return word
 
 t=len(wenben())
+
+def f(): 
+    k=str('全文字数为:'+str(t)+'词')
+    tkinter.messagebox.showinfo(title='字数统计',message=k)
+
+tc=['a','is','to','do','am','are','than','it','the','an','that','be','in','on'\
+    ,'at','so','by','this','these','and','but','of','for','he','two']
+s=[]#去掉停用词后的词，用于词频统计
+for i in word:
+    if i not in tc:
+        s.append(i)
